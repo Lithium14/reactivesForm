@@ -6,10 +6,18 @@
         <input type="text" placeholder="Fadi RATA" formControlName="username">
       </label>
     </div>
-    <div>
+    <div formGroupName="credentials">
       <label>
         email:
         <input type="email" placeholder="fadi@mail.fr" formControlName="email">
+
+
+        {{ userForm.get('email').errors/email.rules }}
+
+
+        <div *ngIf="userForm.get('email').errors && !userForm.get('userForm.email').pristine">
+          <div [hidden]="!userForm.get('email').invalid">password is invalid.</div>
+        </div>
       </label>
     </div>
     <div>
@@ -23,25 +31,29 @@
         Adress
       </div>
 
-    <div>
-      <label>
-        Street:
-        <input type="text" placeholder="711-2880 Nulla St. Mankato" formControlName="street">
-      </label>
+      <div>
+        <label>
+          Street:
+          <input type="text" placeholder="711-2880 Nulla St. Mankato" formControlName="street">
+        </label>
+      </div>
+      <div>
+        <label>
+          zipCode:
+          <input type="number" placeholder="95633" formControlName="zipCode">
+        </label>
+      </div>
+      <div>
+        <label>
+          Country:
+          <input type="text" placeholder="Mississipi" formControlName="country">
+        </label>
+      </div>
     </div>
-    <div>
-    <label>
-      zipCode:
-      <input type="number" placeholder="95633" formControlName="zipCode">
-    </label>
-  </div>
-    <div>
-      <label>
-        Country:
-        <input type="text" placeholder="Mississipi" formControlName="country">
-      </label>
-    </div>
-  </div>
     <button type="submit" [disabled]="!userForm.valid">Submit</button>
   </form>
 </div>
+
+
+
+<button (click)="click()">  trigger shot </button>

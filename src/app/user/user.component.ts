@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { emailValidator } from '../email-validator';
+
 
 
 @Component({
@@ -12,12 +14,14 @@ export class UserComponent implements OnInit {
 
   userForm = this.fb.group({
     username : [''],
-    password : [''],
-    email : [''],
-      adress : this.fb.group({
-      street  : [''],
-      zipCode :  [''],
-      country :  ['']
+    credentials : this.fb.group({
+      password : [''],
+      mail : ['', [Validators.required, emailValidator]],
+    }),
+    adress : this.fb.group({
+    street  : [''],
+    zipCode :  [''],
+    country :  ['']
   }),
 });
 
@@ -33,4 +37,9 @@ export class UserComponent implements OnInit {
   }
 
 
+
+  click() {
+    console.log('totot');
+
+  }
 }
