@@ -1,0 +1,41 @@
+<div class="container">
+  <form class="form-group">
+    <div class="form-control">
+      <label>
+        name:
+        <input type="text" placeholder="Fadi RATA" [formControl]="username">
+      </label>
+    </div>
+    <div>
+      <label>
+        email:
+        <input type="email" placeholder="fadi@mail.fr" [formControl]="email">
+      </label>
+    </div>
+    <div>
+      <label>
+        password:
+        <input type="password" placeholder="*****" [formControl]="password">
+      </label>
+    </div>
+
+      <p><strong>
+        Adress:
+      </strong></p>
+
+    <div>
+      <label>
+        Street:
+        <input type="text" placeholder="711-2880 Nulla St. Mankato" [formControl]="street">
+      </label>
+    </div>
+    <div>
+      <label>
+        Country:
+        <input type="text" placeholder="Mississipi" [formControl]="country">
+      </label>
+    </div>
+
+    <button (click)="createUser()">Inscription</button>
+  </form>
+</div>
