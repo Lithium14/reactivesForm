@@ -18,10 +18,16 @@ export class UserComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.createUser();
   }
 
   createUser() {
     this.username.setValue('');
+    this.email.setValue('');
+    this.password.setValue('');
+    this.street.setValue('');
+    this.zipCode.setValue('');
+    this.country.setValue('');
   }
 
 

@@ -30,6 +30,12 @@
       </label>
     </div>
     <div>
+    <label>
+      zipCode:
+      <input type="number" placeholder="95633" [formControl]="zipCode">
+    </label>
+  </div>
+    <div>
       <label>
         Country:
         <input type="text" placeholder="Mississipi" [formControl]="country">
@@ -38,4 +44,13 @@
 
     <button (click)="createUser()">Inscription</button>
   </form>
+</div>
+<div>
+  {{username.value}}
+  {{email.value}}
+  {{password.value}}
+  {{street.value}}
+  {{zipCode.value}}
+  {{country.value}}
+
 </div>
